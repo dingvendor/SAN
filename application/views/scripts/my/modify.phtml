@@ -1,0 +1,21 @@
+<p>This is where you modify your account</p>
+
+<?php 
+$this->tabPane("modifytab",
+                     'Modify your account settings<br >'.$this->usernameform.$this->emailform.$this->passwordform,
+                     array('title' => 'Email & Password'));
+
+$this->tabPane("modifytab",
+                     'This is a tab',
+                     array('title' => 'Modify Profile'));
+
+$this->tabPane("modifytab",
+                     'This is a tab',
+                     array('title' => 'Contact Preferences'));
+
+echo $this->tabContainer("modifytab",
+                               array(),
+                               array('class' => 'flora')); ?>
+
+<?php
+// var_dump($this->passwordform->getMessages());

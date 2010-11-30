@@ -1,0 +1,14 @@
+<?php
+// Show search box
+echo $this->form;
+
+//print_r($this->results);
+
+?>
+<hr width="75%">
+<?php
+foreach ($this->results as $hit)
+{
+	print_r($hit);
+	?><br /><br /><?php
+}

@@ -1,0 +1,13 @@
+<?php
+foreach($this->headlines as $headline)
+{
+?>
+<ul>
+        <a href="/news/article/id/<?php echo $headline['id']; ?>"><?php
+echo
+$headline['title'];
+?></a>
+</ul>
+<?php
+}
+?>

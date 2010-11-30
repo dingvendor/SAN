@@ -1,0 +1,83 @@
+<?php
+$this->jQuery()->enable();
+$this->JQuery()->addJavascriptFile($this->baseUrl().'/js/jquery/settings.js');
+?>
+<script type="text/javascript">
+pic1 = new Image(16, 16); 
+pic1.src = "/images/loading.gif";
+
+$(document).ready(function(){
+
+
+$("#username").change(function() { 
+
+var usr = $("#username").val();
+
+if(usr.length >= 3)
+{
+$("#status").html('<img align="absmiddle" src="/images/loading.gif" /> Checking availability...');
+
+$.ajax({ 
+type: "GET", 
+url: "/account/username/", 
+data: "username="+ usr, 
+success: function(msg){ 
+
+var msgLength = msg.length;
+msg = msg.substring(0,(msgLength-1));
+
+$("#status").ajaxComplete(function(event, request, settings){ 
+
+if(msg.toLowerCase() == 'OK'.toLowerCase())
+{ 
+$("#username").removeClass('object_error'); // if necessary
+$("#username").addClass("object_ok");
+$("#status").html(' <img align="absmiddle" src="/images/accepted.png" alt="Username is available" /> Username is available');
+$("#complete").removeAttr("disabled");
+} 
+else 
+{ 
+$("#username").removeClass('object_ok'); // if necessary
+$("#username").addClass("object_error");
+$(this).html(msg);
+$("#complete").attr("disabled","disabled");
+
+}});}});}
+else
+{
+$("#status").html('The username should have at least 3 characters.');
+$("#username").removeClass('object_ok'); // if necessary
+$("#username").addClass("object_error");$("#complete").attr("disabled","disabled");
+}});});
+
+//-->
+
+</script>
+<p>Your email address has been validated, now you must create your username.</p>
+
+<form method="post" action="/account/validate" id="validateAccount" name="validateAccount" onSubmit="return validate()">
+<label for="username">Username: </label>
+<input type="text" name="username" id="username">
+<div id="status"></div>
+<input type="hidden" name="usernameok" id="usernameok" value="" />
+<br />
+<label for="validatedemail">Validated Email: </label>
+<input type="text" name="validatedemail" value="<?php echo $this->result->email; ?>" disabled="disabled" />
+<input type="hidden" name="email" value="<?php echo $this->result->email; ?>" />
+<br />
+<label for="newsletter">Recieve our newsletter?</label>
+<input type="checkbox" name="newsletter" class="required" />
+<br />
+<input type="submit" name="complete" id="complete" value="Complete account creation" disabled="disabled"/>
+</form>
+
+<script type="text/javascript">
+$( function () {
+twitter.screenNameKeyUp();
+$('#user_screen_name').focus();
+});
+
+</script>
+<?php
+
+//var_dump($this->result);

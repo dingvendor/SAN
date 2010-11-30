@@ -1,0 +1,23 @@
+<?php
+//var_dump($this->game);
+
+echo $this->game->name;
+?>
+<img src="<?php echo $this->baseUrl();?>/images/games/<?php echo $this->game->image;?>" alt="<?php echo $this->game->name;?>" style="float:right" />
+
+<?php
+if(null != $this->game->flavour)
+{
+?>
+<p><b>Flavour Text</b><br />
+<?php echo $this->game->flavour_markdown; ?>
+</p>
+<?php
+}
+?>
+
+<p><b>Game Master</b></p>
+
+<p><b>Crew List</b></p>
+
+<p>Website: <a href="<?php echo $this->game->url; ?>"><?php echo $this->game->url; ?></a>

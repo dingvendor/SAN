@@ -1,0 +1,20 @@
+<p>All <?php echo $this->type;?> games for a full list of games <a href="/games/list">click here</a>.</p>
+
+<?php
+
+if(isset($this->games))
+{
+	foreach($this->games as $game)
+	{
+?>
+
+<div class="game">
+        <?php echo $game->name; ?><br clear="right" />
+        <a href="<?php echo $this->baseUrl();?>/games/show/id/<?php echo $game->id;?>"><img src="<?php echo $this->baseUrl(); ?>/images/games/<?php echo $game->image;?>" alt="<?php echo $game->name; ?>Banner" /></a><br />
+        Game Type: <a href="/games/type/is/<?php echo $game->simtype; ?>"><?php echo $game->simtype; ?></a> Ship Type: <?php echo $game->shiptype; ?> <a href=\"\">Website</a>
+- <a href="<?php echo $this->baseUrl(); ?>/games/show/id/<?php echo $game->id; ?>">More Information</a><br />
+</div>
+
+<?php
+	}
+}

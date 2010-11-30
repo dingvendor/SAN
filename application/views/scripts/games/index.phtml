@@ -1,0 +1,20 @@
+<p>This is where we will be listing our games</p>
+
+<?php
+
+if(isset($this->groups))
+{
+
+	foreach($this->groups as $group)
+	{
+		// var_dump($group);
+?>
+<div class="group">
+	<div class="group_name"><a href="/games/list/group/<?php echo $group['id']; ?>"><?php echo $group['name']; ?></a></div>
+	<div class="group_desc"><?php echo $group['desc']; ?></div>
+</div>
+<?php
+	}
+}
+
+?>

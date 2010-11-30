@@ -1,0 +1,17 @@
+<?php
+echo $this->form;
+?>
+
+<?php
+if(isset($this->results))
+{
+	foreach ($this->results as $hit) 
+	{
+    		echo "<a href-\"".$this->baseUrl().$hit->url."\">";
+    		echo $hit->name;
+		echo "</a> - Score: ".$hit->score;
+    		//echo $hit->author;
+		echo "<br />";
+	}
+}
+?>
