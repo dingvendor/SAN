@@ -7,54 +7,10 @@
         <controller>index</controller>
         <action>index</action>
 	</home>
-	<games>
-		<label>Games</label>
-		<module>default</module>
-		<controller>games</controller>
-		<action>index</action>
-	</games>
-	<characters>
-		<label>Characters</label>
-		<module>default</module>
-		<controller>characters</controller>
-		<action>index</action>
-		<visible>0</visible>
-	</characters>
-	<database>
-		<label>Database</label>
-		<module>default</module>
-		<controller>database</controller>
-		<action>index</action>
-		<visible>0</visible>
-	</database>
-	<news>
-		<label>News</label>
-		<module>default</module>
-		<controller>news</controller>
-		<action>index</action>
-	</news>
-	<comms>
-		<label>Communication</label>
-		<uri></uri>
-		<pages>
-			<irc>
-			<label>IRC Chat</label>
-			<module>default</module>
-			<controller>irc</controller>
-			<action>index</action>
-			</irc>
-			<forum>
-			<label>Forum</label>
-			<uri>http://www.taskforce93.com/forum/</uri>
-			</forum>
-		</pages>
-	</comms>
-	<join>
-		<label>Join</label>
-		<module>default</module>
-		<controller>join</controller>
-		<action>index</action>
-	</join>
+	<forum>
+	<label>Forum</label>
+	<uri>http://singleabstractnoun.proboards.com/</uri>
+	</forum>
 	<loginreg>
 		<label>Login / Register</label>
 		<module>default</module>

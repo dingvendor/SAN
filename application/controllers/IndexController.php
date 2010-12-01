@@ -17,12 +17,12 @@ class IndexController extends Zend_Controller_Action
 	$this->view->headTitle()->append('Index');
 
 	// action body
-	$core = new models_Core();
-	$this->view->statistics = $core->getStatistics();
+	//$core = new models_Core();
+	//$this->view->statistics = $core->getStatistics();
 	
 	// News
-	$news = new models_News();
-	$this->view->headlines = $news->getHeadlines();
+	//$news = new models_News();
+	//$this->view->headlines = $news->getHeadlines();
 
         $bootstrap = $this->getInvokeArg('bootstrap');
         $this->view->environment = $bootstrap->getEnvironment();

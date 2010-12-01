@@ -24,25 +24,13 @@ if($this->jQuery()->isEnabled())
 </head>
 
 <body>
-<?php
-if(getenv('APPLICATION_ENV') == 'development')
-{
-
-/*
-echo $this->dialogContainer('dialog', 'This is the development version of Task Force 93\'s Website. The information contained here
-is probably incorrect. Please head
-to <a href="http://www.taskforce93.com">http://www.taskforce93.com/</a> for the live site.');
-*/
-}
-?>
 
 <div id="title">
-<img src="/images/banner.jpg" alt="Task Force 93" />
+Single Abstract Noun
 </div>
 
 <div id="menu">
 	<?php echo $this->navigation(); ?>
-	<? /* php echo $this->profileLink(); */?>
 </div>
 <div id="search">
 <?php
@@ -65,16 +53,6 @@ if(isset($messages))
 
 // var_dump(Zend_Session::getSaveHandler());
 ?>
-
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-15716919-2");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 
 </body>
 
